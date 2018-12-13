@@ -1,0 +1,54 @@
+
+
+.beat {
+    display: inline-block;
+    background: url(music_note.jpg) no-repeat;
+    width: 120px;
+    height: 120px;
+}
+
+.beat_4 {
+
+}
+
+.beat_8x2 {
+    background-position: -120px 0;
+}
+
+.beat_16x4 {
+    background-position: -240px 0;
+}
+
+.beat_4rest {
+    background-position: -360px 0;
+}
+
+.beat_8rest_8 {
+    background-position: -480px 0;
+}
+
+.beat_8_8rest {
+    background-position: -600px 0;
+}
+
+.beat_8_16x2 {
+    background-position: 0 -120px;
+}
+
+.beat_16x2_8 {
+    background-position: -120px -120px;
+}
+
+.beat_8_16_8 {
+    background-position: -240px -120px;
+}
+
+.beat_8p_16 {
+    background-position: 0 -240px;
+}
+
+.beat_16_8p {
+    background-position: -120px -240px;
+}
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:v-model="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml"
+      xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>节拍训练</title>
+    <link rel="stylesheet" href="style/music_note.css"/>
+    <style>
+        .generatedContent .beat:after {
+            content : '';
+            display: inline-block;
+            width: 1px;
+            height: 80px;
+            background-color: #000;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="beat_trainning_content">
+
+        <div>
+            <label>
+                <input type="radio" name="level" value="1" v-model="level" v-on:change="onChangeLevel"/>
+                八分音符
+            </label>
+            <label>
+                <input type="radio" name="level" value="2" v-model="level" v-on:change="onChangeLevel"/>
+                十六分音符
+            </label>
+            <label>
+                <input type="radio" name="level" value="3" v-model="level" v-on:change="onChangeLevel"/>
+                十六分音符+休止符
+            </label>
+            <label>
+                <input type="radio" name="level" value="4" v-model="level" v-on:change="onChangeLevel"/>
+                十六分音符+休止符+附点
+            </label>
+            <button type="button" v-on:click="generate4Beat">刷新</button>
+        </div>
+
+        <div class="generatedContent">
+            <span class="beat" v-for="beatItem in generatedBeatList" v-bind:class="beatItem"></span>
+        </div>
+
+        <!--<span class="beat beat_4"></span>-->
+        <!--<span class="beat beat_8x2"></span>-->
+        <!--<span class="beat beat_16x4"></span>-->
+
+        <!--<span class="beat beat_4rest"></span>-->
+        <!--<span class="beat beat_8rest_8"></span>-->
+        <!--<span class="beat beat_8_8rest"></span>-->
+
+        <!--<span class="beat beat_8_16x2"></span>-->
+        <!--<span class="beat beat_16x2_8"></span>-->
+        <!--<span class="beat beat_8_16_8"></span>-->
+
+        <!--<span class="beat beat_8p_16"></span>-->
+        <!--<span class="beat beat_16_8p"></span>-->
+
+    </div>
+
+    <script src="https://cdn.bootcss.com/vue/2.5.18-beta.0/vue.min.js"></script>
+
+    <script src="js/beat_trainning_content.js"></script>
+
+</body>
+</html>
